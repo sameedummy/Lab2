@@ -33,12 +33,33 @@ def calc_min_max_temperature(valueList):
     return [minVal, maxVal]   
 
 
+def sort_temperature(valueList):
+    print("sort_temperature")
+    return valueList.sort()
+
+
+def calc_median_temperature(valueList):
+    print("calc_median_temperature")
+    amount = len(valueList)
+    if amount % 2 == 0:
+        halfAmount = int(amount / 2)
+        median = (valueList[halfAmount - 1] + valueList[halfAmount]) / 2
+        print(f"The median temperature value is {median}")
+    else:
+        positionalNum = int(amount / 2)
+        median = (valueList[positionalNum])
+        print(f"The median temperature value is {median}")
+
+
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
     display_main_menu()
     num_list = get_user_input()
     calc_average_temperature(num_list)
     print(f"The minimum and maximum temperature values are {calc_min_max_temperature(num_list)}")
+    sort_temperature(num_list)
+    calc_median_temperature(num_list)
+
 
 
 if __name__ == "__main__":
