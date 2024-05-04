@@ -35,19 +35,20 @@ def calc_min_max_temperature(valueList):
 
 def sort_temperature(valueList):
     print("sort_temperature")
-    return valueList.sort()
+    return sorted(valueList)
 
 
 def calc_median_temperature(valueList):
+    sortedValueList = sorted(valueList)
     print("calc_median_temperature")
-    amount = len(valueList)
+    amount = len(sortedValueList)
     if amount % 2 == 0:
         halfAmount = int(amount / 2)
-        median = (valueList[halfAmount - 1] + valueList[halfAmount]) / 2
+        median = (sortedValueList[halfAmount - 1] + sortedValueList[halfAmount]) / 2
         print(f"The median temperature value is {median}")
     else:
         positionalNum = int(amount / 2)
-        median = (valueList[positionalNum])
+        median = (sortedValueList[positionalNum])
         print(f"The median temperature value is {median}")
 
 
@@ -57,7 +58,6 @@ def main():
     num_list = get_user_input()
     calc_average_temperature(num_list)
     print(f"The minimum and maximum temperature values are {calc_min_max_temperature(num_list)}")
-    sort_temperature(num_list)
     calc_median_temperature(num_list)
 
 
