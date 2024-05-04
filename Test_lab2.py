@@ -22,9 +22,9 @@ def test_calc_average():
 
 def test_calc_median_temperature():
     result = 0
-    input = [24, 33, 49, 57, 61, 73]
+    list = [24, 33, 49, 57, 61, 73]
     median = 53.0
     
-    result = lab2.calc_median_temperature(input)
+    result = lab2.calc_median_temperature(list)
 
     assert (result == median)
